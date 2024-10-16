@@ -44,12 +44,25 @@ public class Usuario {
     @Column(nullable = false, columnDefinition = "TINYINT(1) DEFAULT 0")
     private Boolean autenticacao_2f;
 
-    // Remova os métodos duplicados e implemente corretamente
+    // Getters e setters necessários
+    public Long getUsuario_id() {
+        return usuario_id;
+    }
+
+    public void setUsuario_id(Long usuario_id) {
+        this.usuario_id = usuario_id;
+    }
+
     public String getCpf() {
         return cpf;
     }
 
     public String getEmail() {
         return email;
+    }
+
+    // New method to set usuario_id
+    public void setUsuarioId(Long usuarioId) {
+        this.usuario_id = usuarioId;
     }
 }
