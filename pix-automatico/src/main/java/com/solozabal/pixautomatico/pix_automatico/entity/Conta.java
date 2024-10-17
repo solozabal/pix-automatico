@@ -36,6 +36,9 @@ public class Conta {
     @Enumerated(EnumType.STRING)
     private TipoConta tipoConta;
 
+    @Column(nullable = false, length = 50)
+    private String nome; // Novo campo
+
     // Enum para tipo de conta
     public enum TipoConta {
         CORRENTE,
@@ -89,5 +92,13 @@ public class Conta {
 
     public void setTipoConta(TipoConta tipoConta) {
         this.tipoConta = tipoConta;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }

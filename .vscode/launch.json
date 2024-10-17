@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-PixAutomaticoApplication<pix-automatico>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.solozabal.pixautomatico.pix_automatico.PixAutomaticoApplication",
+            "projectName": "pix-automatico",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
