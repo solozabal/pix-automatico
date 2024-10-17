@@ -80,4 +80,9 @@ public class Notificacao {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+    // Novo método getDestinatario
+    public String getDestinatario() {
+        return usuario.getEmail();
+    }
 }

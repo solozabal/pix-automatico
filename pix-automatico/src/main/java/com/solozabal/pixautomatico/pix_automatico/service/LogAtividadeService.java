@@ -22,4 +22,9 @@ public class LogAtividadeService {
     public List<LogAtividade> buscarLogsPorUsuario(Usuario usuario) {
         return logAtividadeRepository.findByUsuario(usuario);
     }
+
+    // Implementação do método listarLogs
+    public List<LogAtividade> listarLogs() {
+        return logAtividadeRepository.findAll();
+    }
 }

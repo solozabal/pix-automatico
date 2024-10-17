@@ -1,14 +1,14 @@
 package com.solozabal.pixautomatico.pix_automatico.config;
 
-import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
-public class RabbitMQConfig {
+public class RestTemplateConfig {
 
     @Bean
-    public Queue queue() {
-        return new Queue("pix_automatico_queue", false);
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }

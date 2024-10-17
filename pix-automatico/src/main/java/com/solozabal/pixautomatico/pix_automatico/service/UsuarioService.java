@@ -27,4 +27,29 @@ public class UsuarioService {
     public Optional<Usuario> buscarPorCpf(String cpf) {
         return usuarioRepository.findByCpf(cpf);
     }
+
+    public Usuario findByUsername(String username) {
+        return usuarioRepository.findByUsername(username).orElse(null);
+    }
+
+    public Optional<Usuario> buscarUsuarioPorId(Long id) {
+        return usuarioRepository.findById(id);
+    }
+
+    public void deletarUsuario(Long id) {
+        usuarioRepository.deleteById(id);
+    }
+
+    public Usuario atualizarUsuario(Long id, Usuario usuarioAtualizado) throws Exception {
+        Optional<Usuario> usuarioExistente = usuarioRepository.findById(id);
+        if (usuarioExistente.isPresent()) {
+            Usuario usuario = usuarioExistente.get();
+            usuario.setNome(usuarioAtualizado.getNome());
+            usuario.setEmail(usuarioAtualizado.getEmail());
+            usuario.setSenha(usuarioAtualizado.getSenha());
+            return usuarioRepository.save(usuario);
+        } else {
+            throw new Exception("Usuário não encontrado.");
+        }
+    }
 }
